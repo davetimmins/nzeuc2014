@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>NZEUC</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/esri.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<link rel="stylesheet" href="css/uc2014.css">
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section  class="left">
+					<h3>Extending ArcGIS Online</h3>
+					<p>Scott Bradley & Dave Timmins - Eagle Technology</p>
+					<p><a href="https://twitter.com/djmapper"><i class="fa fa-twitter"></i> @djmapper</a>
+					<a href="https://twitter.com/davetimmins"><i class="fa fa-twitter"></i> @davetimmins</a></p>
+					<p><a href="http://davetimmins.com/"><i class="fa fa-link"></i> davetimmins.com</a></p>
+					<p><a href="https://github.com/davetimmins/nzeuc2014/tree/master/arcgisonline"><i class="fa fa-github-alt"></i> Slides</a></p>
+
+				</section>
+
+				<section class="left">
+					<h2>Agenda</h2>
+					<ul>
+						<li>Custom Roles</li>
+						<li>UI</li>
+						<li>Utility Services</li>
+						<li>Layer Searches</li>
+						<li>Custom Templates</li>
+						<li>REST API</li>
+					</ul>
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<h2>Tag Team</h2>
+					<img src='images/harts.jpg' />
+
+					<aside class="notes">
+						We are running this session in a tag team style so I'll cover the
+						first item then tag in Dave for the next and so on
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Custom Roles</h2>
+
+					<aside class="notes">
+						Scott
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>UI</h2>
+					<ul>
+						<li>What can I change?</li>
+						<li>Why would I want to?</li>
+						<li>Where do I do that?</li>
+						<li><a target='_blank' href='https://svcs-eaglegis.maps.arcgis.com/home/index.html'>Example <i class="fa fa-external-link"></i></a></li>
+					</ul>
+					<aside class="notes">
+						Dave
+
+						Organization -> Settings
+						First tab is general settings. Logo, description. Also, mention region.
+						Home Page settings. Background image (960x180), banner - can be built in image
+						or custom one. Can edit html markup directly.
+
+						Make your organization stand out.
+						May have to meet legal requirements?
+						Don't want to look the same as everyone else
+
+						Switch from what is there by
+					uploading banner then adding
+
+					<style>body.esri {background-image: url('')} #matrixLayout {box-shadow: none;} #featuredMaps, #featuredMaps > #fHeader {box-shadow:none;background:#fff;border-radius:none;border-bottom:none;}</style>
+
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Utility Services</h2>
+
+					<aside class="notes">
+						Scott
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Layer Searches</h2>
+					<ul>
+						<li>Part of your webmap</li>
+						<li>Search against operational layers</li>
+						<li>Filters down to OOTB apps</li>
+						<li><a target='_blank' href='http://svcs-eaglegis.maps.arcgis.com/home/item.html?id=e7e989a1fbec461f9b300cd40984785e'>Show me! <i class="fa fa-external-link"></i></a></li>
+					</ul>
+
+					<aside class="notes">
+						Dave
+
+						Configurable searches as part of webmap
+						Means they filter down in apps too, currently collector and ops dashboard
+
+						You may specify only one search field per layer.
+						Search against string attributes using equals or contains
+						Not case sensitive
+
+						https://svcs-eaglegis.maps.arcgis.com/home/item.html?id=e7e989a1fbec461f9b300cd40984785e
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Custom Templates</h2>
+
+					<aside class="notes">
+						Scott
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2><a target='_blank' href='http://resources.arcgis.com/en/help/arcgis-rest-api/#/Root/02r30000009t000000/'>REST API <i class="fa fa-external-link"></i></a></h2>
+					<ul>
+						<li>Get your hands dirty</li>
+						<li>Can use with ArcGIS Online or Portal</li>
+						<li><a target='_blank' href='https://github.com/Esri/ago-admin-wiki/wiki/Tools'><i class="fa fa-github-alt"></i> Wiki <i class="fa fa-external-link"></i></a></li>
+					</ul>
+
+					<aside class="notes">
+						Dave
+
+						Fine grained control by calling API directly - show example format and call from doco
+
+						Same API for online and portal, knowledge can be used for both
+						Same concept as working with REST API for server
+
+						Number of admin tools already available
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2><img src="images/chat-logo.png" /></h2>
+					<ul>
+						<li>Find an Eagle collector</li>
+						<li>Ask a question</li>
+						<li>Guess the number of #NZEUC tweets</li>
+						<li>Follow <a target='_blank' href='https://twitter.com/eaglegis'>@eaglegis</a> for updates</li>
+						<li>Entries close an hour before closing session</li>
+					</ul>
+
+					<div class="anchor-right" style="margin-top: -440px;">
+
+					</div>
+					<aside class="notes">
+
+						Follow @eaglegis for updates
+
+						Entries close midday Wednesday
+
+						Locate an Eagle Collector and tell them who you are and what you would most like to discover at
+						conference this year. Your question plus a photo of you will be collected using Collector for ArcGIS
+						and displayed in real time via Operations Dashboard viewable on the Eagle Stand and in the GIS
+						Gallery.
+						For taking part and providing your best guess on the number of #NZEUC tweets throughout the
+						conference, you will be in to win an iPad mini. The winner will be announced at the closing session
+						where the panel will also provide answers to your top questions collected.
+					</aside>
+				</section>
+
+				<section class="left">
+					<h1>Thanks!</h1>
+					<p><a href="https://twitter.com/djmapper"><i class="fa fa-twitter"></i> @djmapper</a>
+					<a href="https://twitter.com/davetimmins"><i class="fa fa-twitter"></i> @davetimmins</a></p>
+					<p><a href="http://davetimmins.com/"><i class="fa fa-link"></i> davetimmins.com</a></p>
+					<p><a href="https://github.com/davetimmins/nzeuc2014/tree/master/arcgisonline"><i class="fa fa-github-alt"></i> Slides</a></p>
+					<div class="anchor-right" style="margin-top: -440px;">
+						<img src="eagle.png" alt="Eagle" width="418" height="386" >
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,1281 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>NZEUC</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/esri.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<link rel="stylesheet" href="css/uc2014.css">
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section  class="left">
+					<h3>Developer Workshop</h3>
+					<p>Dave Timmins - Senior GIS Developer - Eagle Technology</p>
+					<p><a href="https://twitter.com/davetimmins"><i class="fa fa-twitter"></i> @davetimmins</a></p>
+					<p><a href="http://davetimmins.com/"><i class="fa fa-link"></i> davetimmins.com</a></p>
+					<p><a href="https://github.com/davetimmins/nzeuc2014/tree/master/workshop"><i class="fa fa-github-alt"></i> Slides</a></p>
+
+					<div class="anchor-right" style="margin-top: -240px;">
+						<img src="images/ballmer-developers-dance_2.gif" alt="DEVELOPERS DEVELOPERS DEVELOPERS" width="320" height="240" >
+					</div>
+				</section>
+
+				<section class="left">
+					<h2>Agenda</h2>
+					<ul>
+						<li>ArcGIS for Developers</li>
+						<li>New Stuff</li>
+						<li>Web App Builder</li>
+						<li>Custom Development</li>
+						<li>Anything else?</li>
+					</ul>
+
+					<aside class="notes">
+						Start by looking at an overview of ArcGIS for Developers, REST API, SDKs, GitHub
+						forums, geonet, twitter (have list of people to follow), http://gis.stackexchange.com/, http://stackoverflow.com/questions/tagged/arcgis.
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>ArcGIS for Developers</h2>
+					<ul>
+						<li><a href='https://developers.arcgis.com/en/' target='_blank'>developers.arcgis.com <i class="fa fa-external-link"></i></a></li>
+						<li>Documentation</li>
+						<li>Samples</li>
+						<li>Community</li>
+					</ul>
+
+					<aside class="notes">
+						One stop shop for all things ArcGIS DEV related.
+						Show site and go through doco for Auth then JS API
+						Show a few samples including sandbox and API reference
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Your Content</h2>
+					<ul>
+						<li><a href='https://developers.arcgis.com/en/downloads/' target='_blank'>Downloads <i class="fa fa-external-link"></i></a></li>
+						<li>Hosted Data</li>
+						<li>Registered Applications</li>
+						<li>Usage Summary</li>
+					</ul>
+
+					<aside class="notes">
+
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Community</h2>
+					<ul>
+						<li><a href='https://developers.arcgis.com/en/community/' target='_blank'><i class="fa fa-globe"></i> developers.arcgis.com <i class="fa fa-external-link"></i></a></li>
+						<li><i class="fa fa-users"></i> Events</li>
+						<li><i class="fa fa-comments"></i> Forums</li>
+						<li><i class="fa fa-stack-overflow"></i> Stack Overflow</li>
+						<li><i class="fa fa-stack-exchange"></i> GIS Stack Exchange</li>
+						<li><i class="fa fa-wordpress"></i> Blogs</li>
+					</ul>
+				</section>
+
+				<section class="left">
+					<h2>OSS</h2>
+					<ul>
+							<li><a href='http://esri.github.io/' target='_blank'>Esri on GitHub <i class="fa fa-github-alt"></i> <i class="fa fa-external-link"></i></a></li>
+							<li>Other devs</li>
+					</ul>
+
+					<aside class="notes">
+						Highlight some projects such as
+						https://github.com/Esri/esri-leaflet
+						https://github.com/Esri/bootstrap-map-js
+						https://github.com/Esri/wind-js
+
+						https://github.com/odoe/esri-js-starterkit
+						https://github.com/DavidSpriggs/ConfigurableViewerJSAPI
+
+						Don't show in detail as we will come back to these at the end
+
+						Good way to learn by looking through code
+						Read code, write code, throw away code, repeat
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2><a href='https://geonet.esri.com/' target='_blank'>GeoNet <i class="fa fa-external-link"></i></a></h2>
+					<ul>
+						<li>Replaces old forums</li>
+						<li>Has enhanced community features</li>
+						<li>Promotes collaboration</li>
+					</ul>
+
+					<aside class="notes">
+						GeoNet is more than just a new forums location.
+						Forums now are only a part of the larger community.
+						This community is there as a tool to help you, the GIS user, get your job done better and more efficiently.
+						You can create discussions, upload files, collaborate on documents, share videos, write blog posts, and much more.
+						This content items can be created within a space focused on a particular topic or industry.
+						Those who follow that place will receive notification of new activity and can get engaged in the conversations.
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2><i class="fa fa-twitter"></i> Twitter</h2>
+					<ul>
+						<li>Great source of information</li>
+						<li>Lots of active geo geeks</li>
+						<li><a href='https://twitter.com/Esri/lists/developers' target='_blank'>Esri devs list <i class="fa fa-external-link"></i></a></li>
+						<li><a href='https://twitter.com/davetimmins/lists/eaglegis' target='_blank'>Eagle staff list <i class="fa fa-external-link"></i></a></li>
+					</ul>
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<h2>Show me some new stuff*</h2>
+					<p>
+						<img src='images/newstuff.gif' />
+					</p>
+					<p>
+						*<sup>Actual stuff may not be new to you</sup>
+					</p>
+
+					<aside class="notes">
+					Top ten of new functionality in no particular order
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>1. Popup improvements</h2>
+					<p><a href='http://developers.arcgis.com/javascript/samples/popup_relatedrecords/' target='_blank'>Use related fields in a popup template <i class="fa fa-external-link"></i></a></p>
+    			<pre><code>"fieldName": "Point_Count_COMMON" // not related
+"fieldName": "relationships/0/Point_Count_COMMON" // related</code></pre>
+					<p>Light and Dark popup themes</p>
+					<img src='images/popup-light-dark.png' />
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>2. <a href='https://github.com/Esri/resource-proxy' target='_blank'>Proxies <i class="fa fa-external-link"></i></a></h2>
+					<ul>
+						<li>.NET, Java, PHP</li>
+						<li>Accessing resources secured with token based authentication</li>
+						<li>OAuth 2.0 app logins</li>
+						<li>Enabling logging</li>
+						<li>Both resource and referer based rate limiting</li>
+					</ul>
+
+					<aside class="notes">
+					  Use for accessing cross domain resources
+						Requests that exceed 2048 characters
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>3. Better vector maps</h2>
+					<ul>
+						<li>Rotation</li>
+						<li>Symbol scaling</li>
+						<li>Dot density renderer</li>
+						<li>Scale dependent renderer</li>
+					</ul>
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>3.1. Rotation</h2>
+					<p>
+						<i class="fa fa-repeat fa-rotate-270"></i> Geographic
+						<i class="fa fa-undo fa-rotate-180"></i> Arithmetic
+					</p><pre><code>layer.renderer.setRotationInfo({
+	field: 'heading',
+	type: 'geographic'
+});</code></pre>
+						<img src='images/class-breaks-proportional-rotation.png' />
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>3.2. Symbol scaling</h2>
+					<pre><code>layer.renderer.setProportionalSymbolInfo({
+	field: 'GroundArea',
+	valueUnit: 'meters',
+	valueRepresentation: 'area'
+});
+
+layer.renderer.setProportionalSymbolInfo({
+	field: 'GroundArea',
+	minDataValue: 1,
+	minSize: 4,
+	maxDataValue: 100,
+	maxSize: 20
+});</code></pre>
+					<img src='images/symbol-scaling.png' />
+					<aside class="notes">
+						Distance or non-distance based quantity
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>3.3. Dot density renderer</h2>
+					<pre><code>var renderer = new DotDensityRenderer({
+  fields: [{
+    name: "M163_07",
+    color: new Color("#CC8800")
+  }],
+  dotValue: 1600,
+  dotSize: 1
+});
+layer.setRenderer(renderer);
+					</code></pre>
+					<img src='images/dot-density.png' />
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>3.4. Scale dependent renderer</h2>
+					<pre><code>var params = {rendererInfos: [{
+  "renderer": renderer1,
+  "minScale": 50000000,
+  "maxScale": 10000000
+}, {
+  "renderer": renderer2,
+  "minScale": 10000000,
+  "maxScale": 5000000
+}]};
+
+var scaleDependentRenderer = new ScaleDependentRenderer(params);
+layer.setRenderer(scaleDependentRenderer);
+</code></pre>
+					<aside class="notes">
+						Can combine other renderer types for each scale
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>4. <a href='https://github.com/Esri/jsapi-resources' target='_blank'>jsapi-resources <i class="fa fa-external-link"></i></a></h2>
+					<p>
+						New repository on GitHub with TypeScript definitions for the JS API as well as the jshint options file used by the JS API team
+					</p>
+
+					<aside class="notes">
+						TypeScript is a typed superset of JavaScript that compiles to plain JavaScript
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>5. New Layers</h2>
+					<ul>
+						<li><a href='http://developers.arcgis.com/javascript/sandbox/sandbox.html?sample=layers_label' target='_blank'>Label layer <i class="fa fa-external-link"></i></a></li>
+						<li><a href='http://developers.arcgis.com/javascript/sandbox/sandbox.html?sample=layers_csv' target='_blank'>CSV layer <i class="fa fa-external-link"></i></a></li>
+					</ul>
+
+					<aside class="notes">
+						CSV data from http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.csv
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>6. Integrated OAuth Support</h2>
+					<ul>
+						<li>Use localStorage to store tokens when "Keep me signed in" is checked</li>
+						<li>Prompt user to sign in again when token expires</li>
+						<li>Advanced configuration options</li>
+					</ul>
+
+					<aside class="notes">
+						OAuth functionality previously available from a sample module is now included in the API. OAuth support improvements includes:
+						Advanced configuration options include
+							set authNamespace - Applications with the same value will share the stored token on the same host
+							expiration
+							locale - The locale for the OAuth sign in page
+							portalUrl
+							see https://developers.arcgis.com/javascript/jsapi/oauthinfo-amd.html for complete list
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>7. Circles <i class="fa fa-circle-thin fa-2x"></i>_<i class="fa fa-circle-thin"></i></h2>
+					<pre><code>var circle = new Circle({
+  center: point,
+	radius: 100
+});
+
+var graphic = new Graphic(circle, symbol);
+map.graphics.add(graphic);
+</code></pre>
+					<img src='images/circles.png' />
+					<aside class="notes">
+						Radius of the circle defaults to 1000.
+						radius units can be set and default is meters
+						default number of points of 60
+						can be geodesic if map sr is WM or geographic
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>8. New Map Widgets</h2>
+					<ul>
+						<li>Home button</li>
+						<li>Locate button</li>
+						<li>Swipe tool</li>
+					</ul>
+
+					<aside class="notes">
+						just describe these
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>9. Go Offline</h2>
+					<ul>
+						<li>Finally!</li>
+						<li>Export tiles from tiled service</li>
+						<li>Sync framework for feature services</li>
+					</ul>
+
+					<aside class="notes">
+						Export tiles from AGOL or server 10.2.2 with export enabled
+						If using sync framework with SDKs then standard license is required
+					</aside>
+				</section>
+
+				<section>
+					<h2>10. Web App Builder</h2>
+					<p>
+						<img src='images/catonasegwaygif.gif' />
+					</p>
+
+					<aside class="notes">
+						Which is a nice segue to...
+					</aside>
+				</section>
+
+				<section>
+					<h2>Web App Builder</h2>
+					<p>
+						What is it?
+					</p>
+
+					<aside class="notes">
+						Web AppBuilder for ArcGIS is an intuitive what-you-see-is-what-you-get (WYSIWYG) application
+						that allows you to easily build web applications without writing a single
+						line of code. It includes powerful tools to configure fully featured
+						HTML web applications. As you add your map and tools, you can visually see
+						them in the app and use them right away.
+
+						Think of it as the HTML5 and JS equivalent of Silverlight and Flex Builders
+
+						Delivers pure HTML-based applications that work on desktop browsers, tablets, and even smart phones
+						Completely integrated within the ArcGIS Online and Portal for ArcGIS platforms
+						Provides over 30 out-of-the-box widgets, such as mapping, query, geoprocessing, analysis, editing, and printing, and so on
+						Supports both 2D and 3D map applications
+						Extensible framework for developers to create widgets or themes, and embed them in applications
+
+						ArcGIS Platform integration
+						To access Web AppBuilder for ArcGIS, you must have ArcGIS Online organization account or Portal for ArcGIS account
+						Currently at beta 2 so need to sign up at https://betacommunity.esri.com
+						Release scheduled with ArcGIS 10.3
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Supported Browsers</h2>
+					<ul>
+						<li>Chrome</li>
+						<li>Firefox</li>
+						<li>Safari 3+</li>
+						<li>Internet Explorer 9+</li>
+					</ul>
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Installation</h2>
+					<ul>
+						<li>Stupid simple</li>
+						<li>Download <i class="fa fa-chevron-right"></i> Unzip <i class="fa fa-chevron-right"></i> run <strong>start.bat</strong></li>
+						<li>or</li>
+						<li>run <strong>node server.js</strong> in directory from command prompt</li>
+					</ul>
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Create an App</h2>
+					<ul>
+						<li>Set the map (webmap)</li>
+						<li>Set the theme</li>
+						<li>Choose your widgets</li>
+						<li>Set the app attributes</li>
+						<li>Run it!</li>
+					</ul>
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Webmap 101</h2>
+					<ul>
+						<li>Basemap</li>
+						<li>Operational data</li>
+						<li>Popups</li>
+						<li>and more</li>
+						<li><a href='http://resources.arcgis.com/en/help/arcgis-web-map-json/index.html#//02qt00000007000000' target='_blank'>More info <i class="fa fa-external-link"></i></a></li>
+					</ul>
+
+					<aside class="notes">
+						though the more is limited here as the web app builder does the heavy lifting
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Set your (Web)map</h2>
+					<ul>
+						<li>Author on ArcGIS Online</li>
+						<li>or Portal</li>
+						<li>Set the start extent</li>
+					</ul>
+
+					<aside class="notes">
+						can then pick when you login to the WAB
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Set your theme</h2>
+					<ul>
+						<li>Determines look and feel</li>
+						<li>Layout</li>
+						<li>Affects the UX</li>
+					</ul>
+
+					<aside class="notes">
+						UI vs UX discussion later
+						Default themes are included (Demo Theme, Foldable Theme, and Tab Theme).
+						Each theme has a style and a layout, can be multiple of each
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>App Attributes</h2>
+					<ul>
+						<li>Title</li>
+						<li>Subtitle</li>
+						<li>Logo</li>
+						<li>Links</li>
+						<li>Use a proxy</li>
+					</ul>
+
+					<aside class="notes">
+						can also configure proxy rules i.e. only proxy certain urls
+					</aside>
+				</section>
+
+				<section>
+					<h2>Widgets</h2>
+					<img src='images/lego.gif' />
+					<aside class="notes">
+						widgets are your application building blocks
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>OOTB</h2>
+					<ul>
+						<li>Some are preconfigured with a layout</li>
+						<li>In-panel and off-panel widgets</li>
+						<li>~20 included currently</li>
+					</ul>
+					<aside class="notes">
+						Besides the pre-configured widgets within a theme,
+						you can always add additional widgets to the application by
+						searching the controlled widgets collection.
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Off-Panel widgets</h2>
+					<ul>
+						<li>Attribute table</li>
+						<li>Coordinate</li>
+						<li>Geocoder</li>
+						<li>Home Button</li>
+						<li>My Location</li>
+						<li>Overview Map</li>
+						<li>Scalebar</li>
+					</ul>
+					<aside class="notes">
+						Off-panel widgets are available as part of a theme but not addable to
+						the widgets' controller. They can be turned on or off but cannot be removed
+						 from the application. When the Widget tab is activated, the off-panel
+						 widgets embedded in a theme display. An off-panel widget does not have
+						 a panel and cannot be contained by header or side controllers.
+
+						Attribute table—Displays a tabular view of a feature layer's attributes.
+						Coordinate—Displays coordinates in the current map projection when moving the cursor on the map or in other coordinate systems by clicking the map.
+						Geocoder—Enables finding a location on the map.
+						Home Button—Click to zoom to map's initial extent.
+						My Location—Detects your physical location and zooms the map to it.
+						Overview Map—Shows the current spatial extent of the map display as a grey rectangle relative to the entire spatial extent of the basemap service.
+						Scalebar—Displays a scalebar on the map
+						</aside>
+				</section>
+
+				<section class="left">
+					<h2>In-Panel widgets</h2>
+					<ul>
+						<li>Basemap Gallery</li>
+						<li>Bookmark</li>
+						<li>Chart</li>
+						<li>Directions</li>
+						<li>Draw</li>
+						<li>Edit</li>
+					</ul>
+					<aside class="notes">
+						In-panel widgets are available to the widget controllers and can be
+						 added to your application. By default, they are contained by a controller.
+						Depending on which theme you select, they may show in the upper right
+						 corner of the application with the header controller in a Foldable theme,
+						 or on the left side of the application with the side controller in the
+						 Tab theme.
+
+						Each in-panel widget requires user interactions on the panel.
+						In addition, in-panel widgets are associated with placeholders that
+						define the position of an in-panel widget.
+						Instead of displaying in the controller,
+						an in-panel widget can also display in the placeholder.
+
+						Basemap Gallery—Presents a gallery of basemaps and allows you to select one.
+						Bookmark—Spatial bookmarks for quick navigation.
+						Chart—Display charts for selected features.
+						Directions—Calculates and displays directions between two or more locations.
+						Draw—Draws basic graphics and texts on the map.
+						Edit—Provides tools to modify features in editable layers.
+						</aside>
+				</section>
+
+				<section class="left">
+					<h2>In-Panel widgets cont.</h2>
+					<ul>
+						<li>Geoprocessing</li>
+						<li>Layer List</li>
+						<li>Legend</li>
+						<li>Measurement</li>
+						<li>Print</li>
+						<li>Query</li>
+					</ul>
+					<aside class="notes">
+						Geoprocessing—Allows you to use any task from geoprocessing services.
+						Layer List—Displays a list of operational data in the application.
+						Legend—Displays a legend for the visible layers in the map.
+						Measurement—Allows you to measure the area of a polygon, length of a line, or find the coordinates of a point.
+						Print—Advanced or basic printing of the current map.
+						Query—Query information from operational layers by executing a predefined query.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Demo Time!</h2>
+					<a href='http://gannicus:3344/webappbuilder/apps/6/' target='_blank'>Super awesome demo</a>
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<h2>Enough config, lets build something</h2>
+					<img src='images/custom-build.gif' />
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Customization Options</h2>
+					<ul>
+						<li>Edit existing widgets / themes</li>
+						<li>Create widgets</li>
+						<li>Create themes - styles and layouts</li>
+					</ul>
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<h2>Geocoder</h2>
+					<p>
+						Change the default behaviour
+					</p>
+
+					<aside class="notes">
+						Beta 1 gave you direct access to the json config in the editor but
+						its gone so now we need to change files directly.
+
+						Look at config in JS API https://developers.arcgis.com/javascript/jsapi/geocoder-amd.html#geocoder1
+
+						Try change UI config, can't as not a real ArcGIS Server locator
+
+						Add new / same one again and look at dir.
+
+						Change new config file.
+
+						Voila
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Custom Widgets</h2>
+					<ul>
+						<li>Naming convention</li>
+						<li>Required files</li>
+						<li>In or Off Panel</li>
+						<li>Can be configurable (code and in builder)</li>
+						<li>Support multiple cultures</li>
+						<li>Support themes</li>
+						<li>Communication with app container, map and other widgets</li>
+					</ul>
+
+					<aside class="notes">
+						Widgets follow a naming conventions
+
+						Support themes
+
+						Extend BaseWidget class
+
+						Use CSS classes for other dijits provided by app container
+
+						Follow dojo conventions
+
+						Can access app container lifecycle functions
+
+						Can access the map
+
+						Can communicate between widgets
+					</aside>
+				</section>
+
+				<section>
+					<h2>Convention and Defaults</h2>
+					<img src='images/widgetstructure.png' />
+
+					<aside class="notes">
+						Widget class - Uses the convention name, Widget.js. A minimal
+						widget can be just this one JS file.
+
+						Widget template (widget UI) - Uses the same name as the widget class
+						except with a .html extension. For example, Widget.html.
+
+						Widget configuration file - Uses the config.json file and puts it
+						into the widget folder.
+
+						Widget I18N file (locale file) - Uses the strings.js file and puts
+						it into the nls folder. For more information,
+						see Dojo’s documentation at
+						http://dojotoolkit.org/documentation/tutorials/1.8/i18n/.
+
+						Widget style file - Uses the style.css file and puts it into the css
+						folder. Puts all the images used by the style into the images css
+						subfolder.
+
+						Widget icon files - Uses the icon.png file name and puts it into the
+						images folder.
+
+						Widget manifest file - Uses the name manifest.json to describe the
+						widget’s content.
+
+						The JavaScript file that defines the widget (Widget.js) - only required file to work
+						Template file that defines the widget’s UI (Widget.html)
+						The widget’s configuration file (config.json)
+						The widget’s i18n strings file (nls/strings.js)
+						The widget’s style file (css/style.css)
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>BaseWidget</h2>
+					<pre><code>define(['dojo/_base/declare', 'jimu/BaseWidget'],
+function(declare, BaseWidget){
+  return declare([BaseWidget], {
+		// do stuff here
+  });
+});</code></pre>
+
+					<aside class="notes">
+						All widgets are derived from BaseWidget
+
+						What do you get from it?
+						App config properties (label, icon. location etc)
+
+						App config data
+
+						Widgets config data
+
+						Map object
+
+						Widget state (open, closed, active)
+
+						Events. Dijit lifecycle events, postCreate, startup.
+						Widget events, onOpen, onSignIn, publishData
+
+						Sharing data (widget communication)
+
+
+						You need to add
+						HTML template
+
+						Widget config file
+
+						Wiget name (for css)
+
+						The business logic
+
+						Localization
+					</aside>
+				</section>
+
+				<section>
+					<h2>Lets Create a Widget</h2>
+					<a href='http://openweathermap.org/' target='_blank'>OpenWeatherMap <i class="fa fa-external-link"></i></a>
+
+					<aside class="notes">
+						Integrate with OWM API
+						Get current weather for map location
+						Simple UI
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Custom Themes</h2>
+					<ul>
+						<li>Panels</li>
+						<li>Theme Widgets</li>
+						<li>Styles</li>
+						<li>Layouts</li>
+						<li>Images</li>
+						<li>manifest.json</li>
+					</ul>
+					<aside class="notes">
+						An ArcGIS Web AppBuilder theme is a collection of user interface elements
+						that define an app's look-and-feel, layout, app navigation,
+						and on screen functional UI items such as scale bar, overview map, and so on.
+						By developing a theme, you can create your application's interface,
+						interactive user experience, and branding style.
+
+						The theme elements includes widget panels, style sheets,
+						and layout definitions and theme widgets.
+						One app can include more than one theme, but can only use one theme
+						while running.
+
+						A Panel is a UI window that displays a widget's content.
+						A Panel can be developed to have its own distinguish behaviors
+						and style for a specific theme. For example, you can develop a
+						Panel that can be dragged around the screen and have purple
+						color style that matches your overall theme style.
+						With the theme Panel, widget developers can focus on developing
+						a widget's function and content without worrying about how the
+						widget displays, which further simplifies the widget development task.
+						A theme can contain multiple Panels.
+
+						A Theme widget is no more than a regular Web AppBuilder widget in
+						terms of coding. However, without this widget as part of the theme,
+						the theme is not complete. For example, the Header Controller widget
+						is part of the out-of-the-box theme, called Foldable theme.
+						Header Controller is developed to navigate all the widgets configured
+						into an app.
+						Creating the Theme widget is also a mechanism to ensure a theme
+						can be shared as whole.
+
+						A Style is a CSS file that you can define your CSS rules in.
+						One theme can contains multiple styles.
+
+						A Layout theme is essentially an app configuration placing all
+						the UI elements (widgets) on the screen.
+						It also includes predefined position holders (placeholders) on
+						the screen that can be configured with widgets in the GUI AppBuilder.
+						A theme can have multiple layouts.
+
+
+				    All theme elements are contained inside a folder.
+						The folder name should be the same as the theme's name.
+				    Similar to a widget, a theme must have an icon file named icon.png,
+						which is under the \images folder.
+				    The theme root folder contains a common.css file.
+						It defines the style content that is common for all styles.
+				    A theme can include multiple styles in the \styles folder.
+				    Each style has a folder that is named the same as the style name.
+						Each style must have a style.css file.
+				    There must be a style named default.
+				    A theme can include multiple panels in the \panels folder.
+				    Each panel has a folder named the same as the panel name.
+						Each panel must have a Panel.js file.
+				    A theme can include multiple layouts in the \layouts folder.
+				    Each layout has a folder named the same as the layout name.
+				    Each layout must have a config.json file and an icon.png file.
+				    There must be a layout named default.
+				    There must be a manifest.json file to describe the theme's content.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Lets Create a Theme</h2>
+
+					<aside class="notes">
+						Simple UI
+						Focused for our new widget
+
+						TODO : add local link for demo
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Deployment</h2>
+					<ul>
+						<li>Download zip from WAB</li>
+						<li>Unzip and configure with web server</li>
+						<li>APP ID?</li>
+					</ul>
+
+					<aside class="notes">
+						explain how to do it
+
+						APP ID needs to be set in ArcGIS Online, change if the user running it changes.
+						Also update link in ArcGIS Online / Portal by adding web app under your items
+					</aside>
+				</section>
+
+				<section>
+					<h2>Third Party Libraries</h2>
+					<p>
+						Yes you can use them <i class="fa fa-thumbs-o-up"></i>
+					</p>
+					<aside class="notes">
+						go through steps to use
+
+						When a third-party library is used during development,
+						add the library in the init.js file, which is under the stemapp folder.
+
+						If a library is shared by many widgets, place the library under the
+						root folder of the app, and add the library link into the resources array.
+
+						If you want to load the library in a widget only, use yepnope to load it.
+
+						If the library is an AMD package, you can config the package at dojoConfig.init.js.
+
+						Having said that, don't just add something because you think you need
+						if *cough* jQuery *cough*. Dojo can do a lot of stuff so its worth
+						looking there first
+					</aside>
+				</section>
+
+				<section>
+					<h2>Lets Deploy!</h2>
+					<img src='images/deploy.gif' />
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
+					<h2>What about different environments?</h2>
+
+					<aside class="notes">
+						Talk about dev, test, prod. Options for changing webmap per app. Switching staging to prod etc.
+						Pretty much just waffle on and make it up
+					</aside>
+				</section>
+
+				<section>
+					<h2>Before we move on</h2>
+					<img src='images/questions.gif' />
+
+					<aside class="notes">
+						Any questions before we move away from WAB
+					</aside>
+				</section>
+
+				<section>
+					<h2>Custom Development</h2>
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>COTS vs. Custom</h2>
+					<ul>
+						<li>When?</li>
+						<li>Why?</li>
+					</ul>
+
+					<aside class="notes">
+						vendor tie in
+						deeper knowledge or existing knowledge
+						time factor
+						cost factor
+						80 / 20 rule
+						fitting a square peg in a round hole
+						design for needs rather than forcing design because something
+						already exists, integrate with current app
+						UX vs UI
+
+						can use both. app templates as starting point to avoid redoing the
+						same functionality and then work on the extra, value add stuff.
+					</aside>
+				</section>
+
+				<section>
+					<h2>COTS</h2>
+					<img src="https://raw.githubusercontent.com/davetimmins/nzeuc2014/master/workshop/images/jedicat.gif" alt="Jedi Cat" />
+
+					<aside class="notes">
+						don't fight it.
+						use what is available to you and embrace it
+						Extend and configure
+						Customise if needed but as last resort.
+						If you change (read hack) the behaviour it will probably break stuff
+						down the line.
+						Upgrades!!
+					</aside>
+				</section>
+
+				<section>
+					<h2>Custom</h2>
+					<img src="images/treelifter.gif" alt="Tree Lifter" />
+
+					<aside class="notes">
+						be careful you don't end up just replicating something thats already
+						available OOTB as COTS
+						yes its fun but you should be productive too
+						initial time and cost investment
+						ongoing support
+						use the right tool for the job
+						don't be afraid to spend some time investigating options at start of project
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Types of Apps</h2>
+					<ul>
+						<li>Map centric</li>
+						<li>Maps as app navigation</li>
+						<li>Map as context</li>
+						<li>Map-less apps</li>
+					</ul>
+
+					<aside class="notes">
+						What sort of app are you building? Who is the target audience.
+						Can your mum use it?
+
+						Map centric - all about the map.
+						In map-centric apps, the map is the most important thing about the app.
+						Usually the map opens first and is the focus of the app.
+						Examples include the ArcGIS App and Collector for ArcGIS.
+						The user gets value out of the app by interacting with the map;
+						it's the map that provides the desired intelligence or information.
+
+						Many of these apps open only one map or allow the user to choose
+						from a few maps that are important to them. Users interact with the same map for some time.
+
+						An example of this type of app is one that allows field workers to:
+
+						View their organization's assets in relation to their current location.
+						Determine the route and time it will take to get to the asset.
+						The value to the user is the map itself.
+
+
+						Maps as app navigation - map helps you get to other information.
+						In maps-as-navigation apps, the map is important,
+						but it's not the most important part of the app.
+						The map in this case drives the navigation of the app and lets the
+						user discover additional information and access other screens that
+						provide value to the user. From the user's point of view, the map
+						itself has little value in this app;
+						it's a tool to get to the information they need.
+
+						An example of this type of app is one that allows users to define
+						areas on the map that show what properties are for sale,
+						what school districts the properties are in, and what the average
+						sales price is. The valuable content for the user is not the map,
+						but the resulting information.
+						However, without the map, the user is unable to get to the target information
+
+
+						Map as context - map may provide extra information though it is
+						secondary to other data. Map driven by other content, embedded in
+						other information
+
+						In a map-as-context app, the map is an additional view in the app
+						and is mainly used for contextual purposes.
+						The map is created and shown based on some other source
+						information also visible in the app. The map displays additional
+						information, which the user can choose to consider.
+						The map is typically auto-populated with the correct layers,
+						layer filters (also called layer definitions), location,
+						and zoom level specifically based on the source information.
+
+						An example of this scenario is displaying a weather map for a
+						specific location and time. The source information in this case is
+						the location name, the time of day, and the weather forecast for
+						that area (temperature, wind speed, humidity, and so on).
+						Initially, the map shows additional weather information
+						(cloud cover and rain radar for example) for the location and its
+						surroundings at the time that is being displayed.
+						If the user changes the time of day, the map updates to
+						show the weather information for the new time.
+						The information the user wants to know is the weather forecast
+						(the source information); the map in this case is additional
+						contextual information that adds value to the source information.
+
+
+						Map-less apps - user doesn't know there is a spatial component,
+						adds spatial intelligence.
+
+						Mapless apps that contain location-based intelligence are common
+						and valuable, especially in devices that leverage GPS and motion
+						sensors to provide information to users. In this pattern, the user
+						should never know about GIS, spatial intelligence, or mapping, and
+						you should choose your tool names and information screens carefully
+						to hide these from the user.
+
+						Example - how far away is the nearest petrol station? How many cafes
+						are near me etc.
+
+						Other considerations, cartography - simple or complex, tools -
+						broad or focused, many or limited, popups
+					</aside>
+				</section>
+
+				<section>
+					<h2>Development Toolbox</h2>
+					<img src='images/tools.gif' />
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Development Toolbox</h2>
+					<ul>
+						<li>IDE</li>
+						<li>Source Control</li>
+						<li>Design</li>
+						<li>Collaboration</li>
+						<li>Knowledge sharing / discovery</li>
+						<li>Testing</li>
+					</ul>
+
+					<aside class="notes">
+						VS, atom, sublime, XCode, Android Studio, eclipse
+
+						git, TFSVC, svn, tortoise
+
+						photoshop, paint.net, prototyping
+
+						GitHub, trello, TFS Service ALM, meetings, methodology
+
+						blog, conferences, meetups, twitter, email, forums
+
+						fiddler
+
+						building, deploying, CI - appveyor, travis, teamcity, TFS service
+
+						NuGet, myget
+
+						cloud hosting. azure, amazon
+
+						free stuff - this presentation
+					</aside>
+				</section>
+
+				<section>
+					<h2>Lets Look at Code</h2>
+					<a target='_blank' href='https://github.com/davetimmins/Joosh'>Dave's example project <i class="fa fa-external-link"></i></a>
+
+					<aside class="notes">
+						Waffle on about this for a bit
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Remember</h2>
+					<ul>
+						<li>Read code</li>
+						<li>Write code</li>
+						<li>Delete code</li>
+						<li>Repeat</li>
+					</ul>
+
+					<aside class="notes">
+						don't get too attached to your code, when you look back in a few
+						months you will probably think - why did I do that?
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2>Other Examples</h2>
+					<ul>
+						<li><a target='_blank' href='https://github.com/odoe/esri-js-starterkit'>Starter kit by @odoe <i class="fa fa-external-link"></i></a></li>
+						<li><a target='_blank' href='https://github.com/DavidSpriggs/ConfigurableViewerJSAPI'>Configurable viewer by @DavidSpriggs <i class="fa fa-external-link"></i></a></li>
+						<li><a target='_blank' href='https://github.com/Esri/esri-leaflet'>Esri leaflet <i class="fa fa-external-link"></i></a></li>
+						<li><a target='_blank' href='https://github.com/Esri/bootstrap-map-js'>Bootstrap map <i class="fa fa-external-link"></i></a></li>
+						<li><a target='_blank' href='https://github.com/Esri/wind-js'>Wind JS <i class="fa fa-external-link"></i></a></li>
+					</ul>
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2><a href='http://www.eagle.co.nz/nzeuc/get-involved/agol.html' target='_blank'>The Great Kiwi Map Challenge <i class="fa fa-external-link"></i></a></h2>
+					<br />
+					<ul>
+						<li><a href='https://bit.ly/Storymapcontest' target='_blank'>bit.ly/Storymapcontest <i class="fa fa-external-link"></i></a></li>
+						<li>Vote for your favourite</li>
+						<li>Winner gets a Panasonic Toughpad!</li>
+						<li>Voting ends Tuesday</li>
+					</ul>
+
+					<div class="anchor-right" style="margin-top: -340px;  text-align:center">
+						<img src='http://www.saltoff.co.nz/images/kiwi-flag.png' />
+						<br />
+						<span style='font-size: 0.3em'>image from saltoff.co.nz</span>
+					</div>
+					<aside class="notes">
+						GIS Gallery on level 4
+						Winner announced at dinner Tues night
+					</aside>
+				</section>
+
+				<section class="left">
+					<h2><img src="images/chat-logo.png" /></h2>
+					<ul>
+						<li>Find an Eagle collector</li>
+						<li>Ask a question</li>
+						<li>Guess the number of #NZEUC tweets</li>
+						<li>Follow <a target='_blank' href='https://twitter.com/eaglegis'>@eaglegis</a> for updates</li>
+						<li>Entries close an hour before closing session</li>
+					</ul>
+
+					<div class="anchor-right" style="margin-top: -440px;">
+
+					</div>
+					<aside class="notes">
+
+						Follow @eaglegis for updates
+
+						Entries close midday Wednesday
+
+						Locate an Eagle Collector and tell them who you are and what you would most like to discover at
+						conference this year. Your question plus a photo of you will be collected using Collector for ArcGIS
+						and displayed in real time via Operations Dashboard viewable on the Eagle Stand and in the GIS
+						Gallery.
+						For taking part and providing your best guess on the number of #NZEUC tweets throughout the
+						conference, you will be in to win an iPad mini. The winner will be announced at the closing session
+						where the panel will also provide answers to your top questions collected.
+					</aside>
+				</section>
+
+				<section class="left">
+					<h1>Thanks!</h1>
+					<p><a href="https://twitter.com/davetimmins"><i class="fa fa-twitter"></i> @davetimmins</a></p>
+					<p><a href="http://davetimmins.com/"><i class="fa fa-link"></i> davetimmins.com</a></p>
+					<p><a href="https://github.com/davetimmins/nzeuc2014/tree/master/workshop"><i class="fa fa-github-alt"></i> Slides</a></p>
+					<div class="anchor-right" style="margin-top: -440px;">
+						<img src="eagle.png" alt="Eagle" width="418" height="386" />
+					</div>
+
+					<aside class="notes">
+					 Any extra time / discussion
+					 - scripting - arcpy, scriptcs
+					 - Xamarin?
+					 - package managers: NuGet, bower, node
+					</aside>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
