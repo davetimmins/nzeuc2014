@@ -1,0 +1,28 @@
+{
+  "name": "WeatherTheme",
+  "label": "Weather Theme",
+  "panels": [
+    {
+      "name": "SimpleBorderPanel",
+      "description": "This is a panel with a border"
+    }
+  ],
+  "styles": [
+    {
+      "name": "default",
+      "description": "this is default style",
+      "styleColor": "black"
+    }
+  ],
+  "layouts": [
+    {
+      "name": "default",
+      "description": "this is the left layout"
+    }
+  ],
+  "version": "0.0.1",
+  "author": "Dave Timmins",
+  "description": "",
+  "copyright": "",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0"
+}

@@ -1,0 +1,35 @@
+{
+  "widgetOnScreen": {
+    "panel": {
+      "uri": "themes/WeatherTheme/panels/SimpleBorderPanel/Panel"
+    },
+    "widgets": [{
+      "label": "Scalebar",
+      "uri": "widgets/Scalebar/Widget",
+      "position": {
+        "left": 25,
+        "bottom": 25
+      }
+    }, {
+      "label": "",
+      "uri": "widgets/OpenWeatherMap/Widget",
+      "inPanel": true,
+      "openAtStart": true,
+      "position": {
+        "left": 25,
+        "top": 25,
+        "width": 500,
+        "height": 250
+      }
+    }]
+  },
+
+  "map": {
+    "position": {
+      "left": 0,
+      "top": 0,
+      "right": 0,
+      "bottom": 0
+    }
+  }
+}

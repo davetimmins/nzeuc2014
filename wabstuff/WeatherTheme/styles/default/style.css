@@ -1,0 +1,12 @@
+.jimu-border-panel{
+  border: 1px solid gray;
+  line-height: 1.2em;
+}
+
+.jimu-preload-widget-icon {
+  visibility: hidden;
+}
+
+.esriSimpleSlider  {
+  visibility: hidden;
+}

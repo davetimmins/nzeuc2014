@@ -1,0 +1,15 @@
+{
+  "geocoder":
+  {
+    "autoComplete": true,
+    "minCharacters": 3,
+    "arcgisGeocoder": false,
+
+    "geocoders": [{
+      "url": "http://joosh.azurewebsites.net/GeocodeServer",
+      "name": "Test locator",
+      "singleLineFieldName": "SingleLine",
+      "placeholder": "Do it"
+    }]
+  }
+}
