@@ -49,15 +49,23 @@ function(declare, BaseWidget,
     },
 
     onMapClick: function(evt) {
+      this.execute(evt.mapPoint);
+    },
 
+    onReceiveData: function(from, path, point){
+      this.execute(point);
+    },
+
+    execute: function(pt) {
+      var point = webMercatorUtils.webMercatorToGeographic(pt);
       this.map.graphics.clear();
-      this.map.graphics.add(new Graphic(evt.mapPoint, new SimpleMarkerSymbol()));
+      this.map.graphics.add(new Graphic(point, new SimpleMarkerSymbol()));
       var resultsNode = this.resultsNode;
       resultsNode.innerHTML = this.config.loading;
-      var pt = webMercatorUtils.webMercatorToGeographic(evt.mapPoint);
+
       var map = this.map;
       var weatherRequest = esriRequest({
-          url: 'http://api.openweathermap.org/data/2.5/find?lat=' + pt.y + '&lon=' + pt.x + '&cnt=1&APPID=' + this.config.owmAPPID,
+          url: 'http://api.openweathermap.org/data/2.5/find?lat=' + point.y + '&lon=' + point.x + '&cnt=1&APPID=' + this.config.owmAPPID,
           handleAs: "json"
         });
         // returns something like
