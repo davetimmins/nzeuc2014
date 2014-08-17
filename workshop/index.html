@@ -208,6 +208,11 @@
 					<aside class="notes">
 					  Use for accessing cross domain resources
 						Requests that exceed 2048 characters
+
+						for oauth mention integrated oauth support
+						Use localStorage to store tokens when "Keep me signed in" is checked
+						Prompt user to sign in again when token expires
+						Advanced configuration options
 					</aside>
 				</section>
 
@@ -320,21 +325,29 @@ layer.setRenderer(scaleDependentRenderer);
 				</section>
 
 				<section class="left">
-					<h2>6. Integrated OAuth Support</h2>
+					<h2>6. <a href='https://jso.arcgis.com' target='_blank'>jso.arcgis.com <i class="fa fa-external-link"></i></a></h2>
 					<ul>
-						<li>Use localStorage to store tokens when "Keep me signed in" is checked</li>
-						<li>Prompt user to sign in again when token expires</li>
-						<li>Advanced configuration options</li>
+						<li>Create custom builds of the JS API</li>
+						<li>Host online or download</li>
+						<li>Doesn't require credits</li>
+						<li><a href='https://jso.arcgis.com/help/#gains' target='_blank'>Potential benefits <i class="fa fa-external-link"></i></a></li>
 					</ul>
-
 					<aside class="notes">
-						OAuth functionality previously available from a sample module is now included in the API. OAuth support improvements includes:
-						Advanced configuration options include
-							set authNamespace - Applications with the same value will share the stored token on the same host
-							expiration
-							locale - The locale for the OAuth sign in page
-							portalUrl
-							see https://developers.arcgis.com/javascript/jsapi/oauthinfo-amd.html for complete list
+						The ArcGIS API for JavaScript Web Optimizer is a web
+						application that generates custom builds of Esri's JavaScript API.
+						The advantage of using a custom build is that your application
+						 downloads and parses only the required JavaScript resources
+						which will make your application faster.
+
+						doesnt use credits
+
+						All code must use AMD-style require and define to load and
+						create modules. Code that uses global references to Esri
+						and/or Dojo modules is not supported.
+						ArcGIS Online organization or developer account.
+						JS API version 3.4 or later.
+						Custom modules should define a package.json file that, at minimum,
+						defines name and version properties.
 					</aside>
 				</section>
 
